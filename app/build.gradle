@@ -1,12 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion 28
     defaultConfig {
         applicationId "org.mightyfrog.android.gradleversionmanagementsample"
         minSdkVersion 21
-        targetSdkVersion 25
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -25,24 +24,24 @@ def junit_version = "4.12"
 apply from: rootProject.file('test.gradle')
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     // defined above in this file
-    androidTestCompile("com.android.support.test.espresso:espresso-core:${espresso_core_version}", {
+    androidTestImplementation("com.android.support.test.espresso:espresso-core:${espresso_core_version}", {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    testCompile "junit:junit:${junit_version}"
+    testImplementation "junit:junit:${junit_version}"
 
     // defined in project build.gradle 1
-    compile "com.android.support:appcompat-v7:$support_lib_version"
-    compile "com.android.support:design:$support_lib_version"
+    implementation "com.android.support:appcompat-v7:$support_lib_version"
+    implementation "com.android.support:design:$support_lib_version"
 
     // defined in project build.gradle 2
-    compile "com.squareup.picasso:picasso:$picasso_version"
+    implementation "com.squareup.picasso:picasso:$picasso_version"
 
     // defined in gradle.properties
-    compile "com.android.support.constraint:constraint-layout:${constraint_layout_version}"
+    implementation "com.android.support.constraint:constraint-layout:${constraint_layout_version}"
 
     // defined in test.gradle
-    compile "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
 }
