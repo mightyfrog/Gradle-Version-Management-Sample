@@ -37,6 +37,7 @@ dependencies {
     implementation "com.android.support:design:$support_lib_version"
 
     // defined in project build.gradle 2
+//    implementation "com.squareup.picasso:picasso:$rootProject.picasso_version"
     implementation "com.squareup.picasso:picasso:$picasso_version"
 
     // defined in gradle.properties
